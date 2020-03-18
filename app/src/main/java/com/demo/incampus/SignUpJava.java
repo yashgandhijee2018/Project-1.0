@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -33,7 +34,6 @@ public class SignUpJava extends AppCompatActivity {
 
 
         /*GOOGLE*/
-
         signInButtonGoogle=findViewById(R.id.login_ggl);
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -63,7 +63,7 @@ public class SignUpJava extends AppCompatActivity {
         startActivity(i);
     }
 
-
+    /*
     @Override
     protected void onStart() {
         super.onStart();
@@ -73,7 +73,7 @@ public class SignUpJava extends AppCompatActivity {
         Intent i=new Intent(this,OTP.class);
         startActivity(i);
     }
-
+    */
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -100,7 +100,7 @@ public class SignUpJava extends AppCompatActivity {
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
-    }
+     }
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);

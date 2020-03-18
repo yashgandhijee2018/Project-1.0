@@ -221,14 +221,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24sp"
         android:layout_marginEnd="24sp"
-        android:text="Save Changes"
         android:background="@drawable/roundrect"
         android:backgroundTint="@color/colorPrimary"
-        android:textColor="@android:color/white"
         android:fontFamily="@font/montserrat_semi_bold"
+        android:onClick="go_to_addpfp_activity_function"
+        android:text="Save Changes"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/course"
-        android:onClick="go_to_addftp_activity_function"/>
+        app:layout_constraintTop_toBottomOf="@+id/course" />
+
+    <Button
+        android:id="@+id/signout_ggl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="signout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
