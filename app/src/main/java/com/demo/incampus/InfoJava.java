@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -18,6 +19,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+
+import java.io.IOException;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class InfoJava extends AppCompatActivity {
 
@@ -56,7 +64,49 @@ public class InfoJava extends AppCompatActivity {
             String personId = acct.getId();
             Uri personPhoto = acct.getPhotoUrl();
 
-            name_et.setText(personName);
+            name_et.setText(personGivenName);
+
+            //API POST
+            Call<ResponseBody> register=RetrofitClient.getInstance().getApi().register(personName,personGivenName,personEmail,"123456");
+            register.enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    try {
+                        String s=response.body().string();
+                        Toast.makeText(InfoJava.this, s, Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Toast.makeText(InfoJava.this,"User already registered!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                    Toast.makeText(InfoJava.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+            });
+
+            //REMOVE COMMENTS TO LOGIN USER
+            /*
+            Call<ResponseBody> login=RetrofitClient.getInstance().getApi().login(personGivenName,"123456");
+            login.enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    try {
+                        String s=response.body().string();
+                        Toast.makeText(InfoJava.this, s, Toast.LENGTH_SHORT).show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                    Toast.makeText(InfoJava.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+             */
         }
         signout_ggl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +120,6 @@ public class InfoJava extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     public void  go_to_addpfp_activity_function(View view)
@@ -91,4 +140,5 @@ public class InfoJava extends AppCompatActivity {
                     }
                 });
     }
+
 }

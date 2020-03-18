@@ -28,7 +28,6 @@ public class SignUpJava extends AppCompatActivity {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             getWindow().setStatusBarColor(Color.BLACK);
         }
-        Log.i("fdr","ewfwfgrthy6uyth");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_java);
 
