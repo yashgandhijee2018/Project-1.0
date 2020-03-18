@@ -1,0 +1,5 @@
+Client ID:
+812077473460-f1odcebdo21a279g5lq2gib9d54k4mon.apps.googleusercontent.com
+
+Client Secret:
+VvhQDgn8mCvBDv9ziOhQqJsd
