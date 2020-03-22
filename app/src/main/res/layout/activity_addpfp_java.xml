@@ -69,6 +69,7 @@
         android:background="@drawable/roundrect2"
         android:backgroundTint="@color/colorAccent"
         android:fontFamily="@font/roboto_medium"
+        android:onClick="done"
         android:padding="10dp"
         android:text="Done"
         android:textColor="@android:color/white"

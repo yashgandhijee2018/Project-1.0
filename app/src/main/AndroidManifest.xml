@@ -11,7 +11,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
-        <activity android:name=".AddPfPJava"
+        <activity
+            android:name=".CourseSpinnerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Login"/>
+        <activity
+            android:name=".AddPfPJava"
             android:screenOrientation="portrait"
             android:theme="@style/SignUp" />
         <activity
