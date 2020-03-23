@@ -15,7 +15,7 @@ public class AddPfPJava extends AppCompatActivity {
     }
 
     public void done (View view) {
-        Intent intent = new Intent(getApplicationContext(),CourseSpinnerActivity.class);
+        Intent intent = new Intent(getApplicationContext(),MyProfileActivity.class);
         startActivity(intent);
     }
 }
