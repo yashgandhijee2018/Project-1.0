@@ -3,4 +3,5 @@
     <string name="title_activity_login_sign">login_sign</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+    <string name="description">Give your group a name. Describe who should join and what you\'ll do.</string>
 </resources>
