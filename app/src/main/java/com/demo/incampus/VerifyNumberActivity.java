@@ -18,9 +18,9 @@ public class VerifyNumberActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verify_number);
     }
 
-//    public void verify (View view) {
-//        Intent intent = new Intent();
-//        startActivity(intent);
-//    }
+    public void verify (View view) {
+        Intent intent = new Intent(this, DrawerActivity.class);
+       startActivity(intent);
+   }
 
 }
