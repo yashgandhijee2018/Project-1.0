@@ -41,23 +41,12 @@
 
     </RelativeLayout>
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="90dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:popupBackground="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relLayout" />
-
     <EditText
         android:id="@+id/enterNumber"
-        android:layout_width="275dp"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:backgroundTint="@color/colorPrimary"
         android:ems="10"
         android:fontFamily="@font/montserrat_semi_bold"
@@ -67,7 +56,7 @@
         android:textColorHint="#C3C3C3"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spinner"
+        app:layout_constraintStart_toEndOf="@+id/indiaCode"
         app:layout_constraintTop_toBottomOf="@+id/relLayout" />
 
     <Button
@@ -78,11 +67,26 @@
         android:background="@drawable/roundrect"
         android:backgroundTint="@color/colorPrimary"
         android:fontFamily="@font/montserrat_semi_bold"
+        android:onClick="verify"
         android:text="verify"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterNumber" />
+
+    <TextView
+        android:id="@+id/indiaCode"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:gravity="center"
+        android:text="+91"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
